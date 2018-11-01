@@ -225,79 +225,77 @@ function create_wp(config) {
     // Add the dynamic parts that are requested/expected for a full boundary
     // =====================================================================
 
-    if( FULL_BOUNDARY ) {
-    	// Current strategy: collect
-    	// - all <a> elements with a relative URL in their href
-    	// - all <img> elements with a relative URL in their src
-    	// - all <object> elements with a relative URL in their data
-    	document.querySelectorAll("object").forEach((element) => {
-    		let href= element.getAttribute("data");
-    		if( href && is_relative(href) ) {
-    			let retval = {
-    				"type"   : "PublicationLink",
-    				"url"    : `${href}`,    				
-    			}
-    			let type = element.getAttribute("type");
-    			if( type ) {
-    				retval.encodingFormat = type
-    			}
-    			manifest.resources.push(retval);
-    		}
-    	});
-    	document.querySelectorAll("img").forEach((element) => {
-    		let href= element.getAttribute("src");
-    		if( href && is_relative(href) ) {
-    			let retval = {
-    				"type"   : "PublicationLink",
-    				"url"    : `${href}`    				
-    			}
-    			let type = image_type(href);
-    			if( type ) {
-    				retval.encodingFormat = type;
-    			}
-    			let alt = element.getAttribute("alt");
-    			if( alt ) {
-    				retval.description = alt;
-    			}
-    			manifest.resources.push(retval);
-    		}
-    	});
-    	document.querySelectorAll("a").forEach((element) => {
-    		let href= element.getAttribute("href");
-    		if( href && is_relative(href) ) {
-    			let retval = {
-    				"type"   : "PublicationLink",
-    				"url"    : `${href}`    				
-    			}
-                let type = element.getAttribute("type");
-                if( type ) {
-                    retval.encodingFormat = type
-                }
-                let rel = element.getAttribute("rel");
-                if( type ) {
-                    retval.rel = rel
-                }
-    			manifest.resources.push(retval);
-    		}
-    	});
-        document.querySelectorAll("script").forEach((element) => {
-            if( element.getAttribute("class") !== "remove" ) {
-                let href= element.getAttribute("src");
-                if( href && is_relative(href) ) {
-                    let retval = {
-                        "type"   : "PublicationLink",
-                        "url"    : `${href}`                    
-                    }
-                    if( href.endsWith(".js") ) {
-                        retval.encodingFormat = "application/Javascript"
-                    }
-                    manifest.resources.push(retval);
-                }                
+    // Current strategy: collect
+    // - all <a> elements with a relative URL in their href
+    // - all <img> elements with a relative URL in their src
+    // - all <object> elements with a relative URL in their data
+    document.querySelectorAll("object").forEach((element) => {
+        let href= element.getAttribute("data");
+        if( href && is_relative(href) ) {
+            let retval = {
+                "type"   : "PublicationLink",
+                "url"    : `${href}`,    				
             }
-        });
+            let type = element.getAttribute("type");
+            if( type ) {
+                retval.encodingFormat = type
+            }
+            manifest.resources.push(retval);
+        }
+    });
+    document.querySelectorAll("img").forEach((element) => {
+        let href= element.getAttribute("src");
+        if( href && is_relative(href) ) {
+            let retval = {
+                "type"   : "PublicationLink",
+                "url"    : `${href}`    				
+            }
+            let type = image_type(href);
+            if( type ) {
+                retval.encodingFormat = type;
+            }
+            let alt = element.getAttribute("alt");
+            if( alt ) {
+                retval.description = alt;
+            }
+            manifest.resources.push(retval);
+        }
+    });
+    document.querySelectorAll("a").forEach((element) => {
+        let href= element.getAttribute("href");
+        if( href && is_relative(href) ) {
+            let retval = {
+                "type"   : "PublicationLink",
+                "url"    : `${href}`    				
+            }
+            let type = element.getAttribute("type");
+            if( type ) {
+                retval.encodingFormat = type
+            }
+            let rel = element.getAttribute("rel");
+            if( type ) {
+                retval.rel = rel
+            }
+            manifest.resources.push(retval);
+        }
+    });
+    document.querySelectorAll("script").forEach((element) => {
+        if( element.getAttribute("class") !== "remove" ) {
+            let href= element.getAttribute("src");
+            if( href && is_relative(href) ) {
+                let retval = {
+                    "type"   : "PublicationLink",
+                    "url"    : `${href}`                    
+                }
+                if( href.endsWith(".js") ) {
+                    retval.encodingFormat = "application/Javascript"
+                }
+                manifest.resources.push(retval);
+            }                
+        }
+    });
 
-    	manifest.resources = uniq(manifest.resources);
-    }
+    manifest.resources = uniq(manifest.resources);
 
     // =====================================================================
     // Add the link to the manifest as well as the manifest itself (in JSON)
