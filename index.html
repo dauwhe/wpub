@@ -797,7 +797,6 @@ partial dictionary WebPublicationManifest {
 				<p>Refer to the <a href="#table-of-contents">table of contents property definition</a> for more
 					information on how to identify which resource contains the table of contents.</p>
 
-				<p class="issue" data-number="291">Do we need a more detailed definition for the HTML TOC format?</p>
 			</section>
 
 			<section id="wp-pagelist">
@@ -2442,19 +2441,13 @@ partial dictionary WebPublicationManifest {
 						as [[!html]]. Augmenting these reports with machine-processable metadata, such as provided in
 						Schema.org [[!schema.org]], is also RECOMMENDED.</p>
 
-					<p>If present in the manifest, the <span data-dfn-for="WebPublicationManifest"><dfn
-								data-lt="accessibilityReport">accessibility report</dfn></span> MUST be expressed as a
+					<p>If present in the manifest, the accessibility report MUST be expressed as a
 							<a href="#publication-link-def"><code>LinkedResource</code></a>. The <code>rel</code> value
 						of the <a href="#publication-link-def"><code>LinkedResource</code></a> MUST include the
 							<code>https://www.w3.org/ns/wp#accessibility-report</code> identifier.</p>
 
 					<p class="ednote">The Working Group will attempt to define the <code>accessibility-report</code>
 						term with IANA, to avoid using a URL.</p>
-
-					<pre class="idl">
-partial dictionary WebPublicationManifest {
-    LinkedResource accessibilityReport;
-};</pre>
 
 					<pre class="example" title="Link to an accessibility report">
 {
@@ -2501,11 +2494,6 @@ partial dictionary WebPublicationManifest {
 						the <a href="#publication-link-def"><code>LinkedResource</code></a> MUST include the
 							<code>privacy-policy</code> identifier&#160;[[!iana-link-relations]].</p>
 
-					<pre class="idl">
-partial dictionary WebPublicationManifest {
-    LinkedResource privacyPolicy;
-};</pre>
-
 					<pre class="example" title="Privacy policy expressed as an external link">
 {
     "@context"   : ["https://schema.org","https://www.w3.org/ns/wp-context"],
@@ -2549,8 +2537,7 @@ partial dictionary WebPublicationManifest {
 						at least one unique property to allow user agents to determine its usability (e.g., a different
 						format, height, width or relationship).</p>
 
-					<p>If present in the manifest, the <span data-dfn-for="WebPublicationManifest"><dfn data-lt="cover"
-								>cover</dfn></span> MUST be expressed as a <a href="#publication-link-def"
+					<p>If present in the manifest, the cover MUST be expressed as a <a href="#publication-link-def"
 								><code>LinkedResource</code></a>. The URL expressed in the <code>url</code> term MUST
 						NOT include a fragment identifier.</p>
 
@@ -2563,11 +2550,6 @@ partial dictionary WebPublicationManifest {
 
 					<p class="ednote">The Working Group will attempt to define the <code>cover</code> term by IANA, to
 						avoid using a URL.</p>
-
-					<pre class="idl">
-partial dictionary WebPublicationManifest {
-    sequence&lt;LinkedResource> cover;
-};</pre>
 
 					<pre class="example" title="Cover HTML page">
 {
@@ -2671,8 +2653,7 @@ partial dictionary WebPublicationManifest {
 					<p class="ednote">The Working Group will attempt to define the <code>pagelist</code> term by IANA,
 						to avoid using a URL.</p>
 
-					<p>If present in the manifest, the <span data-dfn-for="WebPublicationManifest"><dfn
-								data-lt="pagelist">page list</dfn></span> MUST be expressed as a <a
+					<p>If present in the manifest, the page list MUST be expressed as a <a
 							href="#publication-link-def"><code>LinkedResource</code></a>. The URL expressed in the
 							<code>url</code> term MUST NOT include a fragment identifier.</p>
 
@@ -2682,11 +2663,6 @@ partial dictionary WebPublicationManifest {
 					<p>The link to the page list MAY be specified in either the <a href="#default-reading-order">default
 							reading order</a> or <a href="#resource-list">resource-list</a>, but MUST NOT be specified
 						in both.</p>
-
-					<pre class="idl">
-partial dictionary WebPublicationManifest {
-    HTMLElement pagelist;
-};</pre>
 
 					<pre class="example" title="Pagelist identified in another resource of the Web Publication">
 {
@@ -2741,10 +2717,7 @@ partial dictionary WebPublicationManifest {
 					<p>If this process does not result in a link to the table of contents, the Web Publication does not
 						have a table of contents and this property MUST NOT be included in the canonical manifest.</p>
 
-					<p class="issue" data-number="291">Depending on the resolution to this issue, the manifest might
-						contain a separate entry for a machine-processable table of contents, restrictions could be
-						placed on the HTML structure of the referenced table of contents, or parsing rules for
-						extracting a table of contents could be added.</p>
+					<p>See the separate section <a href="#app-toc-structure"></a> for the HTML structure that the table of content SHOULD adhere to.</p>
 
 					<p>If present in the manifest, the <span data-dfn-for="WebPublicationManifest"><dfn data-lt="toc"
 								>table of contents</dfn></span> MUST be expressed as a <a href="#publication-link-def"
@@ -2757,11 +2730,6 @@ partial dictionary WebPublicationManifest {
 					<p>The link to the table of contents MAY be specified in either the <a href="#default-reading-order"
 							>default reading order</a> or <a href="#resource-list">resource-list</a>, but MUST NOT be
 						specified in both.</p>
-
-					<pre class="idl">
-partial dictionary WebPublicationManifest {
-    HTMLElement toc;
-};</pre>
 
 					<pre class="example" title="Table of content identified in another resource of the Web Publication">
 {
