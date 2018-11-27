@@ -416,8 +416,8 @@ dictionary WebPublicationManifest {
 								characteristics of the target resource.</li>
 						</ol>
 
-						<p>In other words, a single string value is a shorthand for a <code>LinkedResource</code>
-							object whose <code>url</code> property is set to that string value. (See also <a
+						<p>In other words, a single string value is a shorthand for a <code>LinkedResource</code> object
+							whose <code>url</code> property is set to that string value. (See also <a
 								href="#strings-vs-objects"></a>.)</p>
 
 						<pre class="example" title="Resource list that includes one link using a relative URL as a string ('datatypes.svg') and two that display the various properties of the a LinkedResource object">
@@ -790,10 +790,9 @@ partial dictionary WebPublicationManifest {
 						page</a>, the manifest SHOULD <a href="#table-of-contents">identify the resource</a> that
 					contains the structure.</p>
 
-				<p>
-					When specified, the table of content MUST include a link to at least one <a href="#wp-resources">resource</a>,
-					and all links SHOULD refer to <a href="#wp-resources">resources</a> within <a href="#wp-bounds">publication bounds</a>. 
-				</p>
+				<p> When specified, the table of content MUST include a link to at least one <a href="#wp-resources"
+						>resource</a>, and all links SHOULD refer to <a href="#wp-resources">resources</a> within <a
+						href="#wp-bounds">publication bounds</a>. </p>
 
 				<p>Refer to the <a href="#table-of-contents">table of contents property definition</a> for more
 					information on how to identify which resource contains the table of contents.</p>
@@ -2077,7 +2076,8 @@ enum ProgressionDirection {
 				<section id="wp-title">
 					<h4>Title</h4>
 
-					<p>The title provides the human-readable name of the <a>Web Publication</a>. It is expressed using the <code>name</code> property.</p>
+					<p>The title provides the human-readable name of the <a>Web Publication</a>. It is expressed using
+						the <code>name</code> property.</p>
 
 					<table class="zebra">
 						<thead>
@@ -2102,22 +2102,30 @@ enum ProgressionDirection {
 						</tbody>
 					</table>
 
-					<p>
-						The title is specified by the <a href="#wp-title">manifest expression</a>, when present. If not included in the <a>authored manifest</a>, the user agent MUST use the value of the <a data-cite="!html#the-title-element"><code>title</code> element</a>&#160;[[!html]] of the Web Publication’s <a>primary entry page</a>, if present, when generating the <a>canonical manifest</a>.
-					</p>
+					<p> The title is specified by the <a href="#wp-title">manifest expression</a>, when present. If not
+						included in the <a>authored manifest</a>, the user agent MUST use the value of the <a
+							data-cite="!html#the-title-element"><code>title</code> element</a>&#160;[[!html]] of the Web
+						Publication’s <a>primary entry page</a>, if present, when generating the <a>canonical
+							manifest</a>. </p>
 
-					<p id="generate_title">
-						If the title is not available either in the <a>authored manifest</a> or as a non empty <a data-cite="!html#the-title-element"><code>title</code> element</a> in the <a>primary entry page</a>, the user agent MUST create one. This specification does not specify what heuristics the user agent should use; it can, for example, use a language-specific placeholder title, use the <abbr title="Uniform Resource Locator">URL</abbr> of the manifest or the primary entry page, or use the value of the <a href="#address">address</a> in the <a>authored manifest</a>. 
-					</p>
-	
-					<p class="note">
-						Relying on the <code>title</code> element could be semantically problematic if the Web Publication consists of several HTML resources (e.g., one per chapter of a book), because the <a data-cite="!html#the-title-element">HTML definition</a> defines this element as "metadata" for the enclosing HTML document, not for a collection of resources. Using this element is, on the other hand, preferred in the case of a publication consisting of a single HTML document (e.g., a scholarly journal article).
-					</p>
+					<p id="generate_title"> If the title is not available either in the <a>authored manifest</a> or as a
+						non empty <a data-cite="!html#the-title-element"><code>title</code> element</a> in the
+							<a>primary entry page</a>, the user agent MUST create one. This specification does not
+						specify what heuristics the user agent should use; it can, for example, use a language-specific
+						placeholder title, use the <abbr title="Uniform Resource Locator">URL</abbr> of the manifest or
+						the primary entry page, or use the value of the <a href="#address">address</a> in the
+							<a>authored manifest</a>. </p>
+
+					<p class="note"> Relying on the <code>title</code> element could be semantically problematic if the
+						Web Publication consists of several HTML resources (e.g., one per chapter of a book), because
+						the <a data-cite="!html#the-title-element">HTML definition</a> defines this element as
+						"metadata" for the enclosing HTML document, not for a collection of resources. Using this
+						element is, on the other hand, preferred in the case of a publication consisting of a single
+						HTML document (e.g., a scholarly journal article). </p>
 
 					<p class="note">A user agent is not expected to produce a <a
-						data-cite="WCAG20#navigation-mechanisms-title">meaningful
-						title</a>&#160;[[wcag20]] for a Web Publication when one is not specified.
-					</p>
+							data-cite="WCAG20#navigation-mechanisms-title">meaningful title</a>&#160;[[wcag20]] for a
+						Web Publication when one is not specified. </p>
 
 					<pre class="idl">
 partial dictionary WebPublicationManifest {
@@ -2181,7 +2189,7 @@ partial dictionary WebPublicationManifest {
 									<ul>
 										<li>a string, representing the URL&#160;[[url]] of the resource; or</li>
 										<li>an instance of a <a href="#publication-link-def"
-													><code>LinkedResource</code></a> object</li>
+												><code>LinkedResource</code></a> object</li>
 									</ul>
 									<p>The order in the array is <em>significant</em>. The URLs MUST NOT include
 										fragment identifiers. Non-HTML resources SHOULD be expressed as
@@ -2275,7 +2283,7 @@ partial dictionary WebPublicationManifest {
 									<ul>
 										<li>a string, representing the URL&#160;[[url]] of the resource; or</li>
 										<li>an instance of a <a href="#publication-link-def"
-													><code>LinkedResource</code></a> object</li>
+												><code>LinkedResource</code></a> object</li>
 									</ul>
 									<p>The order in the array is <em>not significant</em>. The URLs MUST NOT include
 										fragment identifiers. It is RECOMMENDED to use <code>LinkedResource</code>
@@ -2361,7 +2369,7 @@ partial dictionary WebPublicationManifest {
 									<ul>
 										<li>a string, representing the URL&#160;[[url]] of the resource; or</li>
 										<li>an instance of a <a href="#publication-link-def"
-													><code>LinkedResource</code></a> object</li>
+												><code>LinkedResource</code></a> object</li>
 									</ul>
 									<p>The order in the array is <em>not significant</em>. It is RECOMMENDED to use
 											<code>LinkedResource</code> objects with their <code>encodingFormat</code>
@@ -2546,9 +2554,8 @@ partial dictionary WebPublicationManifest {
 								><code>LinkedResource</code></a>. The URL expressed in the <code>url</code> term MUST
 						NOT include a fragment identifier.</p>
 
-					<p>The <code>rel</code> value of the <a href="#publication-link-def"
-							><code>LinkedResource</code></a> MUST include the
-							<code>https://www.w3.org/ns/wp#cover</code> identifier.</p>
+					<p>The <code>rel</code> value of the <a href="#publication-link-def"><code>LinkedResource</code></a>
+						MUST include the <code>https://www.w3.org/ns/wp#cover</code> identifier.</p>
 
 					<p>If the cover is in an image format, a <code>title</code> and <code>description</code> SHOULD be
 						provided. User agents can use these properties to provide alternative text and descriptions when
@@ -2669,9 +2676,8 @@ partial dictionary WebPublicationManifest {
 							href="#publication-link-def"><code>LinkedResource</code></a>. The URL expressed in the
 							<code>url</code> term MUST NOT include a fragment identifier.</p>
 
-					<p>The <code>rel</code> value of the <a href="#publication-link-def"
-							><code>LinkedResource</code></a> MUST include the
-							<code>https://www.w3.org/ns/wp#pagelist</code> identifier.</p>
+					<p>The <code>rel</code> value of the <a href="#publication-link-def"><code>LinkedResource</code></a>
+						MUST include the <code>https://www.w3.org/ns/wp#pagelist</code> identifier.</p>
 
 					<p>The link to the page list MAY be specified in either the <a href="#default-reading-order">default
 							reading order</a> or <a href="#resource-list">resource-list</a>, but MUST NOT be specified
@@ -2745,9 +2751,8 @@ partial dictionary WebPublicationManifest {
 								><code>LinkedResource</code></a>. The URL expressed in the <code>url</code> term MUST
 						NOT include a fragment identifier.</p>
 
-					<p>The <code>rel</code> value of the <a href="#publication-link-def"
-							><code>LinkedResource</code></a> MUST include the <code>contents</code>
-						identifier&#160;[[!iana-link-relations]].</p>
+					<p>The <code>rel</code> value of the <a href="#publication-link-def"><code>LinkedResource</code></a>
+						MUST include the <code>contents</code> identifier&#160;[[!iana-link-relations]].</p>
 
 					<p>The link to the table of contents MAY be specified in either the <a href="#default-reading-order"
 							>default reading order</a> or <a href="#resource-list">resource-list</a>, but MUST NOT be
@@ -3036,16 +3041,16 @@ partial dictionary WebPublicationManifest {
 					</li>
 					<li> (<a href="#wp-title"></a>) if <var>manifest["name"]</var> is <code>undefined</code>, then
 						locate the <a data-cite="!html#the-title-element"><code>title</code></a> HTML element using
-							<var>document</var>. If that element exists and is non-empty, let <var>t</var> be its text content, and add to <var>manifest</var>: 
-							<ul>
-								<li> if the language of <code>title</code> is explicitly <a
-										data-cite="!html#the-lang-and-xml:lang-attributes">set</a> to the value of
-										<var>l</var>, then add <br />
-									<code class="json">"name": [{"value": t, "language": l}]</code>
-								</li>
-								<li>or <br />
-									<code class="json">"name": [t]</code><br /> otherwise </li>
-							</ul>
+							<var>document</var>. If that element exists and is non-empty, let <var>t</var> be its text
+						content, and add to <var>manifest</var>: <ul>
+							<li> if the language of <code>title</code> is explicitly <a
+									data-cite="!html#the-lang-and-xml:lang-attributes">set</a> to the value of
+									<var>l</var>, then add <br />
+								<code class="json">"name": [{"value": t, "language": l}]</code>
+							</li>
+							<li>or <br />
+								<code class="json">"name": [t]</code><br /> otherwise </li>
+						</ul>
 					</li>
 					<li> (<a href="#language-and-dir"></a>) if <var>manifest["inLanguage"]</var> is
 							<code>undefined</code> and the value of <var>lang</var> is <em>not</em>
@@ -3124,7 +3129,8 @@ partial dictionary WebPublicationManifest {
 							usage of the embedded values of <code>lang</code> and <code>dir</code> (steps (1) and (2) in
 							this section) depend on <a href="https://github.com/w3c/json-ld-syntax/issues/22">JSON-LD
 								#22</a>, <a href="https://github.com/w3c/json-ld-syntax/issues/57">JSON-LD #57</a>, and,
-							ultimately, <a href="https://github.com/w3ctag/design-reviews/issues/312">TAG #312</a>. </li>
+							ultimately, <a href="https://github.com/w3ctag/design-reviews/issues/312">TAG #312</a>.
+						</li>
 					</ul>
 				</div>
 			</section>
@@ -3164,10 +3170,10 @@ partial dictionary WebPublicationManifest {
 									<var>Obj</var> in <var>manifest object[term]</var> has <var>Obj["name"]</var> set.
 								If not, remove <var>Obj</var> from <var>manifest object[term]</var> array and issue a
 								warning. </li>
-								<li>
-									Check whether the value of <var>manifest object["name"]</var> is not empty. If it is, generate a value (see the <a href="#generate_title">separate note for details</a>) and issue a warning.
-								</li>
-								<li> For all the terms defined in <a href="#resource-categorization-properties"></a>, check
+							<li> Check whether the value of <var>manifest object["name"]</var> is not empty. If it is,
+								generate a value (see the <a href="#generate_title">separate note for details</a>) and
+								issue a warning. </li>
+							<li> For all the terms defined in <a href="#resource-categorization-properties"></a>, check
 								whether every object <var>Obj</var> in <var>manifest object[term]</var> has
 									<var>Obj["url"]</var> set. If not, remove <var>Obj</var> from <var>manifest
 									object[term]</var> array and issue a warning. If yes, check whether
@@ -3562,6 +3568,180 @@ partial dictionary WebPublicationManifest {
 			<h2>Privacy</h2>
 
 			<div class="ednote">Placeholder for privacy issues.</div>
+		</section>
+		<section id="app-toc-structure" class="appendix">
+			<h2>HTML Table of Contents</h2>
+
+			<p>The following sections define the content structuring recommendations and expected user agent processing
+				of the machine-readable table of contents when it is expressed as HTML.</p>
+
+			<section id="app-toc-content">
+				<h3>Content Structuring</h3>
+
+				<p>To optimize the machine processing of an HTML table of contents by user agents, authors SHOULD adhere
+					to the following structuring guidelines.</p>
+
+				<p class="note">The following content model does not disallow the inclusion of other elements or
+					content. Such content is ignored by user agents, however, as described in the next section.</p>
+
+				<dl class="elemdef">
+					<dt>Content Model</dt>
+					<dd>
+						<dl class="variablelist">
+							<dt><a href="https://www.w3.org/TR/html/sections.html#the-nav-element"
+								><code>nav</code></a></dt>
+							<dd>
+								<p>A <code>role</code> attribute with the value <code>doc-toc</code> is REQUIRED</p>
+								<p>In this order:</p>
+								<ul class="nomark">
+									<li><a href="https://www.w3.org/TR/html/dom.html#heading-content"><code>HTML Heading
+												content</code></a>
+										<code>[0 or 1]</code></li>
+									<li>
+										<p>Either:</p>
+										<ul class="nomark">
+											<li><code>ol</code> or <code>ul</code>
+												<code>[exactly 1]</code></li>
+											<li><code>section</code>
+												<code>[2 or more]</code></li>
+										</ul>
+									</li>
+								</ul>
+							</dd>
+							<dt><a href="https://www.w3.org/TR/html/grouping-content.html#the-section-element"
+										><code>section</code></a></dt>
+							<dd>
+								<p>In this order:</p>
+								<ul class="nomark">
+									<li><a href="https://www.w3.org/TR/html/dom.html#heading-content"><code>HTML Heading
+												content</code></a>
+										<code>[exactly 1]</code></li>
+									<li>
+										<p>Either:</p>
+										<ul class="nomark">
+											<li><code>ol</code> or <code>ul</code>
+												<code>[exactly 1]</code></li>
+											<li><code>section</code>
+												<code>[2 or more]</code></li>
+										</ul>
+									</li>
+								</ul>
+							</dd>
+							<dt><a href="https://www.w3.org/TR/html/grouping-content.html#the-ol-element"
+										><code>ol</code></a> and <a
+									href="https://www.w3.org/TR/html/grouping-content.html#the-ul-element"
+										><code>ul</code></a></dt>
+							<dd>
+								<p>In this order:</p>
+								<ul class="nomark">
+									<li>
+										<p>
+											<code>li</code>
+											<code>[1 or more]</code></p>
+									</li>
+								</ul>
+							</dd>
+							<dt><a href="https://www.w3.org/TR/html/grouping-content.html#the-li-element"
+										><code>li</code></a></dt>
+							<dd>
+								<p>In this order:</p>
+								<ul class="nomark">
+									<li>
+										<p><code>a</code>
+											<code>[exactly 1]</code></p>
+									</li>
+									<li>
+										<p>
+											<code>ol</code> or <code>ul</code>
+											<code>[0 or 1]</code></p>
+									</li>
+								</ul>
+							</dd>
+							<dt><a href="https://www.w3.org/TR/html/textlevel-semantics.html#the-a-element"
+										><code>a</code></a></dt>
+							<dd>
+								<p>In any order:</p>
+								<ul class="nomark">
+									<li>
+										<p>
+											<a href="https://www.w3.org/TR/html/dom.html#phrasing-content"><code>HTML
+													Phrasing content</code></a>
+											<code>[1 or more]</code></p>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+						<p>Note that there are no restrictions on the attributes allowed on these elements.</p>
+						<p>Refer the definition below for additional requirements.</p>
+					</dd>
+				</dl>
+
+				<p>The content model of the <code>nav</code> element is interpreted as follows:</p>
+
+				<ul class="conformance-list">
+					<li>
+						<p id="confreq-nav-ol">The <code>ol</code> child of the <code>nav</code> element represents the
+							primary level of content navigation.</p>
+					</li>
+					<li>
+						<p id="confreq-nav-a">Each list item of the ordered list represents a heading, structure or
+							other item of interest. A child <code>a</code> element describes the target that the link
+							points to, while a <code>span</code> element serves as a heading for breaking down lists
+							into distinct groups (for example, a large list of illustrations can be segmented into
+							several lists, one for each chapter).</p>
+					</li>
+					<li>
+						<p id="confreq-nav-a-cnt">The child <code>a</code> or <code>span</code> element MUST provide a
+							non zero-length text label after concatenation of all child content and application of white
+							space normalization rules. Although non-textual descendant elements MAY be rendered directly
+							to users, text content included in <code>title</code> or <code>alt</code> attributes MUST be
+							used when determining compliance with this requirement.</p>
+					</li>
+					<li>
+						<p id="confreq-nav-a-title">If an <code>a</code> or <code>span</code> element contains instances
+							of <a href="https://www.w3.org/TR/html/dom.html#embedded-content">HTML embedded content</a>
+							that do not provide intrinsic text alternatives, the element MUST also include a
+								<code>title</code> attribute with an alternate text rendering of the link label.</p>
+					</li>
+					<li>
+						<p id="confreq-nav-a-href">The IRI reference provided in the <code>href</code> attribute of the
+								<code>a</code> element MUST adhere to the following requirements:</p>
+						<ul>
+							<li>
+								<p id="confreq-nav-a-href-default">In the case of the <a href="#sec-nav-toc"><code>toc
+											nav</code></a>, <a href="#sec-nav-landmarks"><code>landmarks nav</code></a>
+									and <a href="#sec-nav-pagelist"><code>page-list nav</code></a>, it MUST resolve to
+									an <a>Top-level Content Document</a> or fragment therein.</p>
+							</li>
+							<li>
+								<p id="confreq-nav-a-href-other">For all other <code>nav</code> types, it MAY reference
+									any resource, regardless of whether it is a Publication Resource, or whether it is
+										<a data-lt="Local Resource">Local</a> or <a>Remote Resource</a>.</p>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<p id="confreq-nav-a-nest">An <code>a</code> element MAY be followed by an <code>ol</code>
+							ordered list representing a subsidiary content level below that heading (e.g., all the
+							subsection headings of a section).</p>
+					</li>
+					<li>
+						<p id="confreq-nav-span-nest">A <code>span</code> element MUST be followed by an <code>ol</code>
+							ordered list; it cannot be used in "leaf" <code>li</code> elements.</p>
+					</li>
+					<li>
+						<p id="confreq-nav-sublist">Regardless of whether an <code>a</code> or <code>span</code> element
+							precedes it, every sublist MUST adhere to the content requirements defined in this section
+							for constructing the primary navigation list.</p>
+					</li>
+				</ul>
+			</section>
+
+			<section id="app-toc-ua">
+				<h3>User Agent Processing</h3>
+
+				<p>...</p>
+			</section>
 		</section>
 		<section id="app-manifest-examples" class="appendix informative">
 			<h2>Manifest Examples</h2>

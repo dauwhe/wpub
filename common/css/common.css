@@ -66,3 +66,32 @@ table.zebra tr:nth-child(even) {
 
 table.zebra th{border-bottom:1px solid #bbb;padding:.2em 1em;}
 table.zebra td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+
+
+/* toc element def */
+
+ul.nomark,
+ol.nomark,
+ul.conformance-list {
+    list-style-type: none;
+}
+
+dl.elemdef {
+    border-left: 0.5em solid rgb(145,200,255);
+    background-color: rgb(236,246,255);
+    padding: 0.5em 1em;
+	margin-bottom: 2em;
+}
+
+dl.elemdef ul.nomark {
+	padding-left: 1em;
+}
+
+dl.elemdef > dd > ul.nomark:first-child {
+	padding-left: 0 !important;
+}
+
+dl.conformance-list > dd {
+    margin-top: 0.7em;
+}
+
